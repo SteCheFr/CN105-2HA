@@ -1,2 +1,2 @@
 # CN105-2HA
-CN105 WiFi controller for Mitsubishi air conditioner
+CN105-2HA WiFi controller for Mitsubishi air conditioner for Home Assistant
