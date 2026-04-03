@@ -10,4 +10,4 @@ It is based on **Echavet** software.
 🟢 If you want to modify the script yourself (Config_ESP32.yaml), read **Modifications_by_you.pdf** file.
 
 
-[Consulter le rapport](Documentation/Modifications_by_yourself.pdf)
+[Read](Documentation/Modifications_by_yourself.pdf)
