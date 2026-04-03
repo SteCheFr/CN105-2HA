@@ -7,3 +7,5 @@ It is based on **Echavet** software.
 
 🟢 If you wish modify the script (Config_ESP32.yaml), read **Update_by_you.pdf** file.
 
+[!NOTE]
+> Cette ligne aura une barre bleue (Information).
