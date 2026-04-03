@@ -21,3 +21,6 @@ It is based on **Echavet** software.
 
 > [!CAUTION]
 > Cette ligne aura une barre rouge (Danger / Erreur).
+
++ Cette ligne apparaîtra en vert (comme un ajout de code)
+- Cette ligne apparaîtra en rouge (comme une suppression)
