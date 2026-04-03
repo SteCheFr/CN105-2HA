@@ -7,4 +7,4 @@ It is based on **Echavet** software.
 
 🔵 Actual versions : Hardware : 1.0 ---- Software : 1.1
 
-🟢 If you want to modify the script yourself (Config_ESP32.yaml), [Read Documentation/Modifications_by_yourself.pdf](Documentation/Modifications_by_yourself.pdf)
+🟢 If you want to modify the script yourself (Config_ESP32.yaml), [Click here](Documentation/Modifications_by_yourself.pdf) to read Documentation/Modifications_by_yourself.pdf
