@@ -7,9 +7,11 @@ It is based on **Echavet** software.
 
 🔵 Actual versions : Hardware : 1.0 ---- Software : 1.1
 
+🟡 The last version of Config_EPS.yaml is [Here](Code/Config_ESP32.yaml)
+
 🟢 If you want to modify the script (Config_ESP32.yaml) yourself, [Click here](Documentation/Modifications_by_yourself.pdf) to read **Documentation/Modifications_by_yourself.pdf**.
 
-🟡 The last version off Config_EPS.yaml is [Here](Code/Config_EPS32.yaml)
+
 
 
 
