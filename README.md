@@ -5,4 +5,4 @@ A cable with a **CN105** connector combined with an electronic circuit allows yo
 
 It is based on **Echavet** software.
 
-🟢 If you wish modify the script (Config_ESP32.yaml), read **Update_by_you.pdf** file.
+🟢 If you want to modify the script yourself (Config_ESP32.yaml), read **Update_by_you.pdf** file.
