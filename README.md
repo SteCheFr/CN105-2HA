@@ -6,22 +6,3 @@ A cable with a **CN105** connector combined with an electronic circuit allows yo
 It is based on **Echavet** software.
 
 🟢 If you wish modify the script (Config_ESP32.yaml), read **Update_by_you.pdf** file.
-
-> [!NOTE]
-> Cette ligne aura une barre bleue (Information).
-
-> [!TIP]
-> Cette ligne aura une barre verte (Astuce / Succès).
-
-> [!IMPORTANT]
-> Cette ligne aura une barre violette (Information clé).
-
-> [!WARNING]
-> Cette ligne aura une barre orange (Attention).
-
-> [!CAUTION]
-> Cette ligne aura une barre rouge (Danger / Erreur).
-
-```diff
-+ Cette ligne apparaîtra en vert
-- Cette ligne apparaîtra en rouge
