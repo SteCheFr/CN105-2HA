@@ -5,4 +5,4 @@ A cable with a CN105 connector combined with an electronic circuit allows you to
 
 It is based on Echavet software.
 
-+ If you wish modify the script (Config_ESP.yaml), read Update_by_you.pdf.
++If you wish modify the script (Config_ESP.yaml), read Update_by_you.pdf.
