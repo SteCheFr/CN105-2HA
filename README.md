@@ -20,7 +20,7 @@ It is based on **Echavet** software, and **ESP32** controller.
 <span style="color:red">Over 500 CN105-2HA cables and modules sold worldwide!</span>
 Over 500 CN105-2HA cables and modules sold worldwide !
 
-
+🚨 <span style="color:red">Over 500 CN105-2HA cables and modules sold worldwide!</span>
 
 
 
