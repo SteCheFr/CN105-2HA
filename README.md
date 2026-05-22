@@ -12,6 +12,8 @@ It is based on **Echavet** software, and **ESP32** controller.
 🟢 If you want to modify the script (Config_ESP32.yaml) yourself, [Click here](Documentation/Modifications_by_yourself.pdf) to read **Documentation/Modifications_by_yourself.pdf**.
 
 
+
+
 > [!CAUTION]
 > **05/22/2026** : Several users have told me that at the startup, the **CN105-2HA** module sometimes does not connect properly to the **Mitsubishi** device. The workaround is to trigger the **CN105-2HA** module reset procedure using the entity: **button.clim_x_restart**.
 
