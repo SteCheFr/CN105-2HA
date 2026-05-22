@@ -20,6 +20,8 @@ It is based on **Echavet** software, and **ESP32** controller.
 ## 🚨 <span style="color:red; font-size:36px;"><strong>Over 500 sold worldwide !</strong></span>
 
 
+> [!CAUTION]
+> Cette ligne aura une barre rouge (Danger / Erreur).
 
 
 
