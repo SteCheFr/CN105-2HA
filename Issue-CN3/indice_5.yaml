@@ -1,0 +1,184 @@
+substitutions:
+  n: "5"
+  prefix: "CLIM"
+  hard_version: "2.0"
+  soft_version: "1.1"
+  remote_temp_sensor: sensor.my_room_temperature # Homeassistant sensor providing remote temperature
+
+esphome:
+  name: "clim${n}"
+  friendly_name: "${prefix}${n}"
+
+esp32:
+  board: esp32-c3-devkitm-1
+
+uart:
+  - id: HP_UART
+    baud_rate: 2400
+    rx_pin: GPIO20
+    tx_pin: GPIO21
+
+external_components:
+  - source: github://echavet/MitsubishiCN105ESPHome
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  output_power: 8.5dBm
+  ap:
+    ssid: "AP-2HA"
+    password: "abcd1234"
+  reboot_timeout: 30s
+
+captive_portal:
+
+# Enable logging
+logger:
+  level: INFO
+  logs:
+    EVT_SETS: INFO
+    WIFI: INFO
+    MQTT: INFO
+    WRITE_SETTINGS: INFO
+    SETTINGS: INFO
+    STATUS: INFO
+    CN105Climate: WARN
+    CN105: INFO
+    climate: WARN
+    sensor: WARN
+    chkSum: INFO
+    WRITE: WARN
+    READ: WARN
+    Header: INFO
+    Decoder: INFO
+    CONTROL_WANTED_SETTINGS: INFO
+
+# Enable Home Assistant API
+api:
+
+sensor:
+  # Uptime sensor.
+  - platform: uptime
+    name: "${prefix}${n}_Uptime"
+
+  # WiFi Signal sensor.
+  - platform: wifi_signal
+    name: "${prefix}${n}_WiFi Signal"
+    update_interval: 120s
+
+  - platform: homeassistant
+    name: "${prefix}${n}_Remote Temperature Sensor"
+    entity_id: ${remote_temp_sensor}
+    internal: false
+    disabled_by_default: true
+    device_class: temperature
+    state_class: measurement
+    unit_of_measurement: "°C"
+    filters:
+      - clamp:
+          min_value: 1
+          max_value: 40
+          ignore_out_of_range: true
+      - throttle: 30s
+    on_value:
+      then:
+        - logger.log:
+            level: INFO
+            format: "Remote temperature received from HA: %.1f C"
+            args: ["x"]
+        - lambda: "id(hp).set_remote_temperature(x);"
+
+ota:
+  platform: esphome
+
+# Enable Web server.
+web_server:
+  port: 80
+
+# Sync time with Home Assistant.
+time:
+  - platform: homeassistant
+    id: homeassistant_time
+
+# Text sensors with general information.
+text_sensor:
+  - platform: version
+    name: "${prefix}${n}_ESPHome Version"
+  - platform: wifi_info
+    ip_address:
+      name: "${prefix}${n}_IP"
+    ssid:
+      name: "${prefix}${n}_SSID"
+    bssid:
+      name: "${prefix}${n}_BSSID"
+  
+  - platform: template
+    name: "${prefix}${n}_Hard Version"
+    lambda: 'return {"${hard_version}"};'
+    update_interval: 60s
+
+  - platform: template
+    name: "${prefix}${n}_Soft Version"
+    lambda: 'return {"${soft_version}"};'
+    update_interval: 60s
+
+# Create a button to restart the unit from HomeAssistant.
+button:
+  - platform: restart
+    name: "${prefix}${n}_Restart"
+
+climate:
+  - platform: cn105
+    id: hp
+    name: "${prefix}${n}"
+    icon: mdi:heat-pump
+    visual:
+      min_temperature: 10
+      max_temperature: 31
+      temperature_step:
+        target_temperature: 1
+        current_temperature: 0.5
+    fahrenheit_compatibility: "disabled"
+    remote_temperature_timeout: 30min
+    remote_temperature_keepalive_interval: 20s
+    update_interval: 2s
+    debounce_delay: 100ms
+    # Various optional sensors
+    compressor_frequency_sensor:
+      name: "${prefix}${n}_Compressor Frequency"
+      entity_category: diagnostic
+      disabled_by_default: true
+    outside_air_temperature_sensor:
+      name: "${prefix}${n}_Outside Air Temp"
+      disabled_by_default: true
+    vertical_vane_select:
+      name: "${prefix}${n}_Vertical Vane"
+      disabled_by_default: false
+    horizontal_vane_select:
+      name: "${prefix}${n}_Horizontal Vane"
+      disabled_by_default: true
+    isee_sensor:
+      name: "${prefix}${n}_ISEE Sensor"
+      disabled_by_default: true
+    stage_sensor:
+      name: "${prefix}${n}_Stage"
+      entity_category: diagnostic
+      disabled_by_default: true
+    sub_mode_sensor:
+      name: "${prefix}${n}_Sub Mode"
+      entity_category: diagnostic
+      disabled_by_default: true
+    auto_sub_mode_sensor:
+      name: "${prefix}${n}_Auto Sub Mode"
+      entity_category: diagnostic
+      disabled_by_default: true
+    input_power_sensor:
+      name: "${prefix}${n}_Input Power"
+      disabled_by_default: true
+    kwh_sensor:
+      name: "${prefix}${n}_Energy Usage"
+      disabled_by_default: true
+    runtime_hours_sensor:
+      name: "${prefix}${n}_Runtime Hours"
+      entity_category: diagnostic
+      disabled_by_default: true
