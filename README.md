@@ -5,11 +5,11 @@ A cable with a **CN105** connector combined with an electronic circuit allows yo
 
 It is based on **Echavet** software, and **ESP32** controller.
 
-🔵 Actual versions : Hardware : 1.0 ---- Software : 1.2
+🔵 Actual versions : Hardware : 2.0 ---- Software : 1.1
 
-🟡 The last version of the code : Config_EPS32.yaml is [Here](Code/Config_ESP32.yaml)
+🟡 The last version of the code : ESP32_C3_V1_1.yaml is [Here](Code/ESP32_C3_V1_1.yaml)
 
-🟢 If you want to modify the script (Config_ESP32.yaml) yourself, [Click here](Documentation/Modifications_by_yourself.pdf) to read **Documentation/Modifications_by_yourself.pdf**.
+🟢 If you want to modify the script (ESP32_C3_V1_1.yaml) yourself, [Click here](Documentation/Modifications_by_yourself.pdf) to read **Documentation/Modifications_by_yourself.pdf**.
 
 <br>
 
