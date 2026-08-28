@@ -1,6 +1,12 @@
 # CN105-2HA
 Controller for **Mitsubishi air conditioner** for **Home Assistant**
 
+![CN105-2HA](Pictures/Module_complet.jpg)
+
+
+
+
+
 A cable with a **CN105** connector combined with an electronic circuit allows you to control most **Mitsubishi air conditioners** via home automation (Home Assistant, Jeedom…). This cable is relatively difficult to find and often at a high price.
 
 It is based on **Echavet** software, and **ESP32 C3 Super Mini** controller.
