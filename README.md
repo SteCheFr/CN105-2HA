@@ -1,4 +1,4 @@
-# CN105-2HA
+# CN105-2HA for Mitsubishi air conditioners
 Controller for **Mitsubishi air conditioner** for **Home Assistant**
 
 <p align="center">
