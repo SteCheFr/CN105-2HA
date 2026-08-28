@@ -11,7 +11,7 @@ It is based on **Echavet** software, and **ESP32 C3 Super Mini** controller.
 
 🔵 Actual versions : Hardware : 2.0 ---- Software : 1.1
 
-🟡 The last version of the code : Config_EPS32.yaml is [Here](Code/Config_ESP32.yaml)
+🟡 Last version of the code : [Here](Code)
 
 🟢 If you want to modify the script (Config_ESP32.yaml) yourself, [Click here](Documentation/Modifications_by_yourself.pdf) to read **Documentation/Modifications_by_yourself.pdf**.
 
