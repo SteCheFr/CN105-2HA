@@ -148,26 +148,3 @@ This is an older model that requires a slightly different configuration.
 **Please contact me before ordering for compatibility confirmation.**
 
 ---
-
-## 🔍 Your Model Is Not Listed?
-
-The compatibility list above is not exhaustive.
-
-If your indoor unit has a **CN105 connector**, there is a very high chance that the **CN105-2HA** module will work with your system.
-
-Please send me:
-
-* A photo showing the CN105 connector
-* The indoor unit model number
-
-and I will be happy to verify compatibility for you.
-
----
-
-## 📷 Example of a CN105 Connector
-
-If you are unsure whether your air conditioner is compatible, remove the front cover of the indoor unit and locate the control board.
-
-Look for a connector labeled **CN105**.
-
-If present, please send me a photo and I will confirm compatibility.
