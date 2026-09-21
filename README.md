@@ -22,7 +22,8 @@ It is based on **Echavet** software, and **ESP32 C3 Super Mini** controller.
 >
 > <br>
 <span style="color:red; font-size:300px;"><strong>🚨 Over 1 300 controllers sold worldwide !</strong></span>
-
+# 🚨 Over 1 300 controllers sold worldwide!
+<h1 style="color:red;">🚨 Over 1 300 controllers sold worldwide!</h1>
 <br>
 <br>
 
