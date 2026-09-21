@@ -26,7 +26,7 @@ It is based on **Echavet** software, and **ESP32 C3 Super Mini** controller.
 <br>
 <br>
 
-**Compatible Air Conditioners**
+##**Compatible Air Conditioners**
 
 > ✅ The following air conditioners are known to work with the **CN105-2HA** module.
 >
