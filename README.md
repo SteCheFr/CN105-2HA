@@ -23,6 +23,8 @@ It is based on **Echavet** software, and **ESP32 C3 Super Mini** controller.
 > <br>
 ## 🚨 <span style="color:red; font-size:36px;"><strong>Over 1 300 controlers sold worldwide !</strong></span>
 
+<br>
+<br>
 
 # Compatible Air Conditioners
 
