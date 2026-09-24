@@ -74,6 +74,11 @@ It is based on **Echavet** software, and **ESP32 C3 Super Mini** controller.
 * MSZ-AY42
 * MSZ-AY50
 
+### MSZ-AY Series
+
+* MSZ-DM25VA
+* MSZ-DM35VA
+
 ### MSZ-EF Series
 
 * MSZ-EF09NA
