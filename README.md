@@ -34,6 +34,10 @@ It is based on **Echavet** software, and **ESP32 C3 Super Mini** controller.
 > ✅ The following air conditioners are known to work with the **CN105-2HA** module.
 >
 > 🔍 This list is **not exhaustive** and is based on user feedback and successful installations.
+>
+> <h3 style="color:red;">
+🔍 This list is <strong>not exhaustive</strong> and is based on user feedback and successful installations.
+</h3>
 
 If your Mitsubishi Electric air conditioner has a **CN105 connector** on the indoor unit control board, there is a very high probability that the **CN105-2HA** module will be compatible.
 
@@ -96,7 +100,9 @@ To date, I have not encountered any model equipped with a CN105 connector that w
 
 ### MSZ-GE Series
 
+* MSZ-GE22VA
 * MSZ-GE24NA
+* MSZ-GE35VA
 
 ### MSZ-GL Series
 
