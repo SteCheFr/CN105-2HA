@@ -59,6 +59,7 @@ It is based on **Echavet** software, and **ESP32 C3 Super Mini** controller.
 
 ### MSZ-AP Series
 
+* MSZ-AP15VGK
 * MSZ-AP20VGK
 * MSZ-AP25VGK
 * MSZ-AP35VGK
