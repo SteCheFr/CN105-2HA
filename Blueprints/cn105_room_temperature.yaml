@@ -1,0 +1,72 @@
+blueprint:
+  name: CN105-2HA room temperature
+  description: >-
+    Keeps a CN105-2HA Mitsubishi controller (firmware V1.2 or later) fed with the room temperature
+    from the sensor(s) you choose, so the heat pump regulates to the room rather than to its own
+    return-air sensor. With several sensors, their average is used; °F and °C are converted as needed.
+    The value is sent whenever a sensor changes and every 5 minutes. If no sensor has a valid
+    reading, nothing is sent and after 30 minutes the indoor unit falls back to its own sensor.
+  domain: automation
+  source_url: https://github.com/SteCheFr/CN105-2HA/blob/main/Blueprints/cn105_room_temperature.yaml
+  input:
+    heat_pump:
+      name: Heat pump controller
+      description: The CN105-2HA module (ESPHome device with a "Remote temperature" entity).
+      selector:
+        device:
+          filter:
+            - integration: esphome
+          entity:
+            - domain: number
+              device_class: temperature
+    room_sensors:
+      name: Room temperature sensor(s)
+      description: One or more temperature sensors in the area the heat pump serves.
+      selector:
+        entity:
+          multiple: true
+          filter:
+            - domain: sensor
+
+mode: queued
+max: 3
+max_exceeded: silent
+
+triggers:
+  - trigger: state
+    entity_id: !input room_sensors
+  - trigger: time_pattern
+    minutes: /5
+  - trigger: homeassistant
+    event: start
+
+variables:
+  heat_pump: !input heat_pump
+  room_sensors: !input room_sensors
+  target: >-
+    {{ device_entities(heat_pump) | select('match', 'number\.')
+       | select('is_state_attr', 'device_class', 'temperature') | first | default('') }}
+  value: >-
+    {% set to_unit = state_attr(target, 'unit_of_measurement') %}
+    {% set ns = namespace(v=[]) %}
+    {% for s in ([room_sensors] if room_sensors is string else room_sensors) %}
+      {% set u = state_attr(s, 'unit_of_measurement') %}
+      {% if states(s) | is_number and u in ['°C', '°F'] %}
+        {% set x = states(s) | float %}
+        {% if u == '°F' and to_unit == '°C' %}{% set x = (x - 32) * 5 / 9 %}
+        {% elif u == '°C' and to_unit == '°F' %}{% set x = x * 9 / 5 + 32 %}{% endif %}
+        {% set ns.v = ns.v + [x] %}
+      {% endif %}
+    {% endfor %}
+    {{ (ns.v | sum / ns.v | count) | round(1) if ns.v and to_unit in ['°C', '°F'] else '' }}
+
+conditions:
+  - condition: template
+    value_template: "{{ target != '' and value != '' and not is_state(target, 'unavailable') }}"
+
+actions:
+  - action: number.set_value
+    target:
+      entity_id: "{{ target }}"
+    data:
+      value: "{{ value }}"

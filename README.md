@@ -24,6 +24,18 @@ It is based on **Echavet** software, and **ESP32 C3 Super Mini** controller.
 >
 > <br>
 
+> [!NOTE]
+> **Software 1.2** ([Code/ESP32_C3_V1_2.yaml](Code/ESP32_C3_V1_2.yaml)) : the same firmware for every module.
+> - **No module index to choose** : each module names itself from its MAC address (for example **CLIM a7bf68**), so several modules never collide. Rename it as you like when you add it in Home Assistant.
+> - **Room temperature chosen in Home Assistant** : the module has a **Remote temperature** entity. Import the blueprint below, create one automation per module, and pick the module and its room sensor(s). Several sensors are averaged; °F / °C is converted automatically. To change the sensor later, just edit the automation — no re-flashing.
+>
+> [![Import the blueprint](https://my.home-assistant.io/badges/blueprint_import.svg)](https://my.home-assistant.io/redirect/blueprint_import/?blueprint_url=https%3A%2F%2Fgithub.com%2FSteCheFr%2FCN105-2HA%2Fblob%2Fmain%2FBlueprints%2Fcn105_room_temperature.yaml)
+>
+> If the automation stops sending values (sensor unavailable, Home Assistant down), the indoor unit falls back to its own temperature sensor after 30 minutes. Modules on software 1.1 keep working as before (they read **sensor.my_room_temperature**).
+>
+> <br>
+
+
 # 🚨 Over 1 300 controllers sold worldwide !
 
 <br>
